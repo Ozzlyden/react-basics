@@ -1,9 +1,10 @@
 import './App.css';
 
-function App() {
+// COMPONENTES APP
+function App(pros) {
   return(
     <div className='App'>
-      <h2>Ola mundo</h2>
+      <h2>{pros.texto}</h2>
     </div>
   );
   
