@@ -1,10 +1,11 @@
 import './App.css';
+import './Header';
 
-// COMPONENTES APP
-function App(pros) {
+// COMPONENTE APP
+function App() {
   return(
     <div className='App'>
-      <h2>{pros.texto}</h2>
+      <h2></h2>
     </div>
   );
   
