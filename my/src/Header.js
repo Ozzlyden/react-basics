@@ -1,13 +1,13 @@
-//import './App.css';
+import './Header.css';
 
-// COMPONENTES HEADER
-export default function Header(props) {
+// COMPONENTE HEADER
+export default function Header(props) {     // export no inicio, nao no final
   return(
     <div className='Header'>
-        <div className="Header__logo">
+        <div className="header_logo">
             <img src="https://i.pinimg.com/736x/70/42/1e/70421eb25796395c266a5bdc24f941c6.jpg"/>
         </div>
-        <div className="Header__menu">
+        <div className="header_menu">
             <a href="">Home</a>
             <a href="">Sobre</a>
             <a href="">Serviços</a>
@@ -17,3 +17,5 @@ export default function Header(props) {
   );
   
 }
+
+// export default Header();

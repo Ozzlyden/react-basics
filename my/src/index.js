@@ -11,7 +11,6 @@ root.render(
   // Chamar componentes
   <React.StrictMode>
     <App />  
-    <Header/>
   </React.StrictMode>
 );
 

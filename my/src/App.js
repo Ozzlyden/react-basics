@@ -1,11 +1,11 @@
 import './App.css';
-import './Header';
+import Header from './Header';
 
 // COMPONENTE APP
 function App() {
   return(
     <div className='App'>
-      <h2></h2>
+      <Header/>
     </div>
   );
   
