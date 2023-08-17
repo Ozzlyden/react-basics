@@ -3,40 +3,37 @@ import Header from './Header';
 import React, { useState, useEffect } from 'react';
 
 // COMPONENTE APP
-function App() {
+export default function App() {
 
-  // Exemplo de HOOK useState
-  const [count, setCount] = useState(0);
-  const [nome, setNome] = useState('Victor');
+  // Variaveis ou constantes
+  const [hora,setHora] = useState(4);
+  const [minuto, setMinuto] = useState(59);
+  const [segundo,setSegundo] = useState(45);
 
-  function callAlert(){
-    alert('Seja bem vindo ao react bascis');
-  };
+  // HOOK 
+  useEffect(() => {
+      const interval = setInterval(() => {
+          setSegundo(segundo+1);
 
-  useEffect(()=>{
-    // Atualiza o titulo do documento usando API do browser
-    document.title = 'Voce clickou: ' + count + " vezes";
-  },[count]); //  Atualiza quando mudar o count
+          if(segundo == 59){
+            setSegundo(0);
+            setMinuto(minuto+1);
 
-  useEffect(()=>{
-    callAlert();
-  },[]); //  Atualiza so uma vez
+            if(minuto == 59){
+              setMinuto(0);
+              setHora(hora+1);
+            }
+          }
+      }, 1000); // Chegando em 1000 chama useEffect novamente
 
-  // Renderizacao condicional
-  if(nome == 'Victor'){
-    return(
-      <div>
-        <p>O nome e {nome}</p>
-      </div>
-    );
-    }else{
-      return(
-        <div>
-          <p>Nao tem{nome} no nome</p>
-        </div>
-      );
-      }
+      return () => clearInterval(interval); // Limpar a const
+  });
+
+
+  return (
+    <div>
+      <h2 style={{textAlign:'center',color:'red'}}>{hora}:{minuto}:{segundo}</h2>
+    </div>
+  );
   }
   
-
-export default App;
