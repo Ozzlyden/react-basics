@@ -7,6 +7,7 @@ function App() {
 
   // Exemplo de HOOK useState
   const [count, setCount] = useState(0);
+  const [nome, setNome] = useState('Victor');
 
   function callAlert(){
     alert('Seja bem vindo ao react bascis');
@@ -21,15 +22,21 @@ function App() {
     callAlert();
   },[]); //  Atualiza so uma vez
 
-  return(
-    <div>
-      <p>Click contador: {count} vezes</p>
-      <button onClick={() => setCount(count + 1 )}>
-        click em mim
-      </button>
-    </div>
-  );
+  // Renderizacao condicional
+  if(nome == 'Victor'){
+    return(
+      <div>
+        <p>O nome e {nome}</p>
+      </div>
+    );
+    }else{
+      return(
+        <div>
+          <p>Nao tem{nome} no nome</p>
+        </div>
+      );
+      }
+  }
   
-}
 
 export default App;
